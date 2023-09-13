@@ -1,3 +1,4 @@
+#ifndef TESTING_ENV
 #include <zephyr.h>
 #include <device.h>
 #include <devicetree.h>
@@ -14,3 +15,8 @@ void main(void)
         echo_uppercase(dev);
     }
 }
+#else
+void main(void){
+    
+}
+#endif

@@ -1,11 +1,8 @@
 #pragma once
-
 #ifdef TESTING_ENV
-struct device
-{
-};
-void test_uart_out();
-void test_uart_in();
+int test_uart_out(unsigned char byte);
+int test_uart_in(unsigned char* byte);
+struct device{};
 #else
 #include <drivers/uart.h>
 #endif

@@ -1,0 +1,5 @@
+mach create
+machine LoadPlatformDescription @platforms/boards/stm32f072b_discovery.repl
+sysbus LoadELF @C:/Users/misae/OneDrive/Documents/GitHub/lab2/.pio/build/disco_test/firmware.elf
+showAnalyzer sysbus.usart1
+start
