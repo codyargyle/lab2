@@ -6,7 +6,7 @@
 void setUp(void) {}
 
 void tearDown(void) {}
-
+//
 // Create counter to keep track of how many bytes to 
 // to keep track where we are in the string
 int count = 6;
