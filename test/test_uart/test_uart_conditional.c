@@ -46,12 +46,10 @@ int test_uart_out(unsigned char byte) {
     }
 }
 
-int main (void)
-{
+void test_general_flow(void){
     // Variables to pass to test
     unsigned char byte;
 
-    UNITY_BEGIN();
     // These test are to make sure that test_uart_in returns a 1 six times
     // and gives us the correct character in the string "hello\n" and finally
     // testing to see that it returns a zero after six times
@@ -85,6 +83,12 @@ int main (void)
     TEST_ASSERT_TRUE(test_uart_out('\n') == 1);
 
     TEST_ASSERT_TRUE(test_uart_in(&byte) == 0);
+}
 
+
+int main (void)
+{
+    UNITY_BEGIN();
+    RUN_TEST(test_general_flow);
     return UNITY_END();
 }
