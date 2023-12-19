@@ -1,11 +1,11 @@
-#include "uart_pointer.h"
+#include "uart_static.h"
 
-void echo_uppercase_pointer(int (*uart_in)(char *), void (*uart_out)(unsigned char))
+void echo_uppercase(const struct device *dev)
 {
     char byte, up;
 
     do {
-        if(uart_in(&byte) != 0){
+        if (uart_poll_in(dev, &byte) != 0) {
             continue;
         }
 
@@ -14,6 +14,6 @@ void echo_uppercase_pointer(int (*uart_in)(char *), void (*uart_out)(unsigned ch
         else
             up = byte;
 
-        uart_out(up);
+        uart_poll_out(dev, up);
     } while(byte != '\n');
 }
